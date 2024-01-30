@@ -8,7 +8,7 @@ namespace BookUI.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required]//
         [MaxLength(30)]
         public string? BookName { get; set; }
         public Double Price { get; set; }
