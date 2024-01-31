@@ -1,4 +1,3 @@
-using BookUI.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +20,7 @@ namespace BookUI
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddTransient<IHomeRepository,HomeRepository>(); // get data
             var app = builder.Build();
             //
             //using (var scope = app.Services.CreateScope())

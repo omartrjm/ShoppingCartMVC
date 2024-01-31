@@ -8,9 +8,15 @@ namespace BookUI.Models
     {
         public int Id { get; set; }
 
-        [Required]//
+        [Required]
         [MaxLength(30)]
         public string? BookName { get; set; }
+
+        [Required]
+        [MaxLength(30)]
+        public string? AuthorName { get; set; }
+
+        [Required]
         public Double Price { get; set; }
         public string? Image { get; set; }
 
@@ -19,5 +25,8 @@ namespace BookUI.Models
         public Genre Genre { get; set; }
         public List<OrderDetail> OrderDetail { get; set; }
         public List<CartDetail> CartDetail { get; set; }
+
+        [NotMapped]
+        public string GenreName { get; set; }
     }
 }
