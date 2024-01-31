@@ -14,14 +14,14 @@
       <option selected>Choose...</option>
       @foreach (var i in Model.Genres)
        {
-      <option selected="@(Model.genreId == )" value="@i.Id">@i.GenreName</option>                    
+      <option selected="@(i.Id==Model.genreId)" value="@i.Id">@i.GenreName</option>                    
        }
 
     </select>
   </div>
 
     <div class="col-12">
-    <label class="visually-hidden" for="">Search by title</label>
+    <label class="visually-hidden" for="sTerm">Search by title</label>
     <div class="input-group">
       <div class="input-group-text"></div>
       <input type="text" class="form-control" value="@Model.sTerm" id="inlineFormSelectPref" name="sTerm" placeholder="Search by title">
