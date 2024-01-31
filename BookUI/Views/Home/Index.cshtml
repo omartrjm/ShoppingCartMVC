@@ -11,7 +11,7 @@
     <label class="visually-hidden" for="genreId">Genres</label>
      
     <select class="form-select" id="genreId" name="genreId">
-      <option selected>Choose...</option>
+      <option selected>Genre</option>
       @foreach (var i in Model.Genres)
        {
       <option selected="@(i.Id==Model.genreId)" value="@i.Id">@i.GenreName</option>                    
@@ -30,6 +30,8 @@
 
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Search</button>
+    <button type="reset" class="btn btn-dark">Reset</button>
+    <a href="/Home/Index" class="btn btn-dark">Reset</a>
   </div>
 </form>
 
@@ -48,7 +50,8 @@
         <h5 class="card-title">@i.BookName</h5>
 
         <p class="card-text">Genre: @i.GenreName</p>
-        <p class="card-text">Genre: @i.AuthorName</p>
+        <p class="card-text">Author: @i.AuthorName</p>
+                            
         <p class="card-text">Price: @i.Price</p>
 
         <a href="#" class="btn btn-primary">Add To Cart</a>
