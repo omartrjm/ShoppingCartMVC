@@ -15,7 +15,7 @@ namespace BookUI.Data
         // table name will be Book cuz we defined it in class book
         public  DbSet<Genre> Genres { get; set; } 
         public  DbSet<ShoppingCart> ShoppingCarts { get; set; } 
-        public  DbSet<CartDetail> CartDetaila { get; set; } 
+        public  DbSet<CartDetail> CartDetails { get; set; } 
         public  DbSet<Order> Orders { get; set; } 
         public  DbSet<OrderDetail> OrderDetails { get; set; } 
         public  DbSet<OrderStatus> OrderStatus { get; set; } 

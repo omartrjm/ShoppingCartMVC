@@ -14,13 +14,15 @@ namespace BookUI
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+                       
             builder.Services.AddIdentity<IdentityUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
             builder.Services.AddControllersWithViews();
             builder.Services.AddTransient<IHomeRepository,HomeRepository>(); // get data
+            builder.Services.AddTransient<ICartRepository,CartRepository>();
+
             var app = builder.Build();
             //
             //using (var scope = app.Services.CreateScope())

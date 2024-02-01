@@ -27,6 +27,8 @@ namespace BookUI.Models
         public List<CartDetail> CartDetail { get; set; }
 
         [NotMapped]
-        public string GenreName { get; set; }
+        public string? GenreName { get; set; }
+
+       
     }
 }
