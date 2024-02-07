@@ -15,7 +15,7 @@ namespace BookUI.Controllers
         public async Task<IActionResult> AddItem(int bookId,int qty=1,int redirect=0)
         {
             var cartCount = await _cartRepo.AddItem(bookId,qty);
-            if (redirect > 0) 
+            if (redirect == 0) 
                 return Ok(cartCount);
                 return RedirectToAction ("GetUserCart");   
         }
@@ -34,8 +34,16 @@ namespace BookUI.Controllers
 
         public async Task<IActionResult> GetTotalItemInCart()
         {
-            int cartItem = await _cartRepo.GetCartItemCount();
+            int cartItem = await _cartRepo.GetCartItemCount ();
             return Ok(cartItem);
+        }      
+        
+        public async Task<IActionResult> Checkout()
+        {
+            bool isCheckdOut= await _cartRepo.DoCheckOut();
+            if (!isCheckdOut)
+                throw new Exception("problem in server side");
+            return RedirectToAction("Index","Home");
         }
     }
 }

@@ -16,7 +16,8 @@ namespace BookUI.Models
 
         [Required]
         public int Quantity{ get; set; }
-
+        [Required]
+        public Double UnitPrice { get; set; }
         public Book Book { get; set; }
         public ShoppingCart ShoppingCart { get; set; }
     }

@@ -1,0 +1,61 @@
+﻿@model ShoppingCart 
+@{
+    ViewData["Title"] = "GetUserCart";
+}
+    
+<div style = "width:90%"; margin:auto class="mt-2" >
+@if (Model != null && Model.CartDetails !=null && Model.CartDetails.Count > 0 )
+{
+<h5>My Cart</h5>
+<table class="table table-striped">
+    <tr>
+        <th>Book</th>
+        <th>Image</th>
+        <th>Genre</th>
+        <th>Unit Price(USD)</th>
+        <th>QT</th>
+        <th>Total Price</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var i in Model.CartDetails){
+        <tr>
+            <td>@i.Book.BookName</td>
+            <td>
+                        @if (string.IsNullOrEmpty(i.Book.Image))
+                        {
+                            <img style="width:100px; height:100px" src="/Images/noimage.png"/>
+                        }
+                        else
+                        {
+                            <img style="width:100px; height:100px" src="/Image/@i.Book.Image"/> // get image same as database
+
+                        }
+                    </td>
+                    <td>@i.Book.Genre.GenreName</td>
+                    <td>@i.Book.Price X @i.Quantity</td>
+                    <td>@i.Book.Price * @i.Quantity</td>
+                    <td>
+                         <a class="btn btn-info" herf="/Cart/AddItem?bookId=@i.BookId&&redirect=1">+</a>
+                         <a class="btn btn-info" herf="/Cart/RemoveItem?bookId=@i.BookId">-</a>
+                    </td>
+                 
+        </tr>
+    }
+        </table>
+        <div class="my-2">
+            <h5>Total(USD): </h5> 
+            @(Model.CartDetails.Select(i=>i.Book.Price*i.Quantity).Sum())
+        </div>
+              
+               <div class="my-2">
+                   <a class="btn btn-primary" herf="/Cart/Checkout">Checkout</a>
+               </div>
+
+    }
+    else
+    {
+        <h5>Cart is empty </h5>
+    }
+</div>
+
+

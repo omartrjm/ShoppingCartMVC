@@ -14,7 +14,7 @@ namespace BookUI.Models
 
         [Required]
         [MaxLength(30)]
-        public string? AuthorName { get; set; }
+        public string AuthorName { get; set; }
 
         [Required]
         public Double Price { get; set; }
