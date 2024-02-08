@@ -15,7 +15,7 @@
 			@foreach (var i in Model)
 			{
 						<tr>
-							<td>@i.CreateDate.ToString("yyyy-mm-dd")</td>
+							<td>@i.CreateDate.ToString("dd-mm-yyyy")</td>
 							<td>@i.OrderStatus.StatusName</td>
 
 
@@ -60,7 +60,7 @@
 												</td>
 												<td>@j.Book.Genre.GenreName</td>
 												<td>@j.Book.Price X @j.Quantity</td>
-												<td>@j.Book.Price * @j.Quantity</td>
+												<td>@(j.Book.Price * @j.Quantity)</td>
 
 										</tr>
 

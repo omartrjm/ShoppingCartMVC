@@ -44,19 +44,22 @@
 
                var response = await fetch('/Cart/GetTotalItemInCart');
                console.log(response);
-                 if(response.status==200)
-                 {
+
+                 if(response.status == 200){
+
                     var result = await response.json();
-                    var cartCountEl = document.getElementById({"cartCount"});
+                    var cartCountEl = document.getElementById("cartCount");
+
                     cartCountEl.innerHTML = result;
                 }
             }
-            catch(er)
+            catch(e)
             {
-              console.log(er);
+              console.log(e);
             }
         }
   </script>
 </html>
     @await RenderSectionAsync("Scripts", required: false)
+
 

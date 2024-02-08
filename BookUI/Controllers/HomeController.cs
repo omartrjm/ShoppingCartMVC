@@ -1,5 +1,5 @@
 using BookUI.Models;
-using BookUI.Models.NewFolder;
+using BookUI.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -24,8 +24,8 @@ namespace BookUI.Controllers
             {
                 Books = books,
                 Genres = genres,
-                sTerm = sTerm,
-                genreId = generId
+                STerm = sTerm,
+                GenreId = generId
 
             };
             

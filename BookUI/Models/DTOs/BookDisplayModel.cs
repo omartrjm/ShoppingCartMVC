@@ -1,11 +1,11 @@
-﻿namespace BookUI.Models.NewFolder
+﻿namespace BookUI.Models.DTOs
 {
     public class BookDisplayModel
     {
         public IEnumerable<Book> Books { get; set; }
         public IEnumerable<Genre> Genres { get; set; }
-        public string sTerm { get; set; } = "";
-        public int genreId { get; set; } = 0;
+        public string STerm { get; set; } = "";
+        public int GenreId { get; set; } = 0;
 
     }
 }
