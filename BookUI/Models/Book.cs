@@ -14,10 +14,10 @@ namespace BookUI.Models
 
         [Required]
         [MaxLength(30)]
-        public string AuthorName { get; set; }
+        public string? AuthorName { get; set; }
 
         [Required]
-        public Double Price { get; set; }
+        public double Price { get; set; }
         public string? Image { get; set; }
 
         [Required]
@@ -27,7 +27,7 @@ namespace BookUI.Models
         public List<CartDetail> CartDetail { get; set; }
 
         [NotMapped]
-        public string? GenreName { get; set; }
+        public string GenreName { get; set; }
 
        
     }
