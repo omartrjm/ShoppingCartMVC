@@ -152,15 +152,15 @@ namespace BookUI.Repositories
                 var userId = GetUserId();
                 if (string.IsNullOrEmpty(userId))
                 
-                     throw new Exception("User is not logged-in");
+                    throw new Exception("User is not logged-in");
                     var cart = await GetCart(userId);
 
                     if(cart is null) 
-                    
                      throw new Exception("Invalid cart");
                 var cartDetail = _db.CartDetails
                                   .Where(a => a.ShoppingCartId == cart.Id).ToList();
-                    if (cartDetail.Count == 0)
+                   
+                if (cartDetail.Count == 0)
                         throw new Exception("Cart is empty");
                 var order = new Order
                 {

@@ -40,7 +40,7 @@ namespace BookUI.Controllers
         
         public async Task<IActionResult> Checkout()
         {
-            bool isCheckdOut= await _cartRepo.DoCheckOut();
+            bool isCheckdOut = await _cartRepo.DoCheckOut();
             if (!isCheckdOut)
                 throw new Exception("problem in server side");
             return RedirectToAction("Index","Home");

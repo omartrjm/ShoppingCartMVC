@@ -16,15 +16,15 @@ namespace BookUI.Controllers
             _homeRepository = homeRepository;
         }
 
-        public async Task<IActionResult> Index(string sTerm="",int generId=0) // get data and show books
+        public async Task<IActionResult> Index(string sterm="",int generId=0) // get data and show books
         {
-            IEnumerable<Book> books = await _homeRepository.GetBooks(sTerm,generId);
+            IEnumerable<Book> books = await _homeRepository.GetBooks(sterm,generId);
             IEnumerable<Genre> genres = await _homeRepository.Genres();
             BookDisplayModel bookModel = new BookDisplayModel
             {
                 Books = books,
                 Genres = genres,
-                STerm = sTerm,
+                STerm = sterm,
                 GenreId = generId
 
             };

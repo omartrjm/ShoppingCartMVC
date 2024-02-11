@@ -14,9 +14,10 @@
       <option selected>Genre</option>
       @foreach (var genre in Model.Genres)
        {
-          <option selected="@(genre.Id == Model.GenreId)" value="@genre.Id">@genre.GenreName</option>                    
+          <option selected = "@(genre.Id == @Model.GenreId)" value="@genre.Id">  @genre.GenreName</option>                    
        }
     </select>
+
   </div>
 
     <div class="col-12">
@@ -52,7 +53,7 @@
             <h5 class="card-title">@book.BookName</h5>
    
          <p class="card-text">
-                 @* Genre: @book.GenreName<br/> *@
+                 Genre: @book.GenreName<br/>
                  Author: @book.AuthorName<br/>
                  Price: @book.Price<br/>
          </p>
